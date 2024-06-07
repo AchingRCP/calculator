@@ -100,3 +100,5 @@ operator3.addEventListener("click", () => getOperator("*"))
 const operator4 = document.getElementById("operator4");
 operator4.addEventListener("click", () => getOperator("/"))
 
+const operator5 = document.getElementById("operator5");
+operator5.addEventListener("click", () => operate(firstNumber,secondNumber,operator))

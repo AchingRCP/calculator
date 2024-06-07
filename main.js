@@ -107,3 +107,7 @@ operator5.addEventListener("click", () => operate(firstNumber,secondNumber,opera
 
 const pantalla = document.getElementById("pantalla")
 
+const optbutC = document.getElementById("optbutC")
+optbutC.addEventListener("click", () => location.reload())
+
+

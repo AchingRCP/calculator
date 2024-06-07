@@ -94,3 +94,8 @@ body{
     font-weight: bold;
     border-radius: 15%;
 }
+
+#pantalla{
+    font-weight: bold;
+    font-size: 30px;
+}

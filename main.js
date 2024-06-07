@@ -122,7 +122,7 @@ operator4.addEventListener("click", () => getOperator("/"))
 const operator5 = document.getElementById("operator5");
 operator5.addEventListener("click", () => operate(firstNumber,secondNumber,operator))
 
-const pantalla = document.getElementById("pantalla")
+const pantalla = document.getElementById("content")
 
 const optbutC = document.getElementById("optbutC")
 optbutC.addEventListener("click", () => resetValues())
@@ -133,5 +133,7 @@ function resetValues(){
     secondNumber = ""
     operator = ""
     result = ""
+    pantalla.fontSize = "30px"
     pantalla.textContent = ""
+    
 }

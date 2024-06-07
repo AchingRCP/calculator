@@ -1,45 +1,56 @@
 function sum(a,b){
-    return a + b
+    return result = a + b
 };
 
 function rest(a,b){
-    return a - b
+    return result = a - b
 };
 
 function power(a,b){
-    return a * b
+    return result = a * b
 };
 
 function divide(a,b){
-   return a/b
+   return result =a/b
 };
 
 let firstNumber = ""
 let secondNumber = ""
-let operator =""
+let operator = ""
+let result = ""
 
 
 function operate(x,y,op){
     if (op === "+"){
-        pantalla.textContent = sum(x,y);
+        sum(x,y);
+        pantalla.textContent = result
+        secondNumber = ""
+        operator = ""
     }else if(op === "-"){
-        pantalla.textContent = rest(x,y);
+        rest(x,y);
+        pantalla.textContent = result
+        secondNumber = ""
     }else if (op === "*"){
-        pantalla.textContent = power(x,y);
+        power(x,y);
+        pantalla.textContent = result
+        secondNumber = ""
     } else if(op === '/') {
         if(y == 0) {
             pantalla.textContent = 'No se puede dividir entre 0';
         } else {
-            pantalla.textContent = x / y;
+            divide(x,y)
+            pantalla.textContent = result
+            secondNumber = ""
         }
         
     }
 }
 
 function getFirstNumber(n){
+    if (result == ""){
     let temp = n
     return firstNumber = parseInt(firstNumber + temp)
-}
+}}
 
 function getSecondNumber(n){
     let temp = n;
@@ -53,10 +64,16 @@ function getOperator(op){
 function getOperation(n){
     if (operator == ""){
         getFirstNumber(n);
-        pantalla.textContent = firstNumber;
-    }else{
+        if (result == ""){
+            pantalla.textContent = firstNumber;
+        }
+    }else if(operator !== "" && result == ""){
         getSecondNumber(n)
         pantalla.textContent = secondNumber;
+    }else if(result !== "" && operator !== ""){
+        firstNumber = result
+        getSecondNumber(n)
+        pantalla.textContent = secondNumber
     }
 }
 
@@ -84,7 +101,7 @@ but7.addEventListener("click", () => getOperation("7"));
 const but8 = document.getElementById("but8");
 but8.addEventListener("click", () => getOperation("8"));
 
-const but9 = document.getElementById("but6");
+const but9 = document.getElementById("but9");
 but9.addEventListener("click", () => getOperation("9"));
 
 const but0 = document.getElementById("but0");
@@ -108,6 +125,13 @@ operator5.addEventListener("click", () => operate(firstNumber,secondNumber,opera
 const pantalla = document.getElementById("pantalla")
 
 const optbutC = document.getElementById("optbutC")
-optbutC.addEventListener("click", () => location.reload())
+optbutC.addEventListener("click", () => resetValues())
 
 
+function resetValues(){
+    firstNumber = ""
+    secondNumber = ""
+    operator = ""
+    result = ""
+    pantalla.textContent = ""
+}

@@ -18,6 +18,7 @@ body{
     width: 100%;
     justify-content: center;
     align-items: center;
+    max-width: 100%
 }
 
 .content{
@@ -98,4 +99,5 @@ body{
 #pantalla{
     font-weight: bold;
     font-size: 30px;
+    overflow: hidden;
 }

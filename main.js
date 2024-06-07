@@ -41,32 +41,62 @@ function getFirstNumber(n){
     return firstNumber = parseInt(firstNumber + temp)
 }
 
-but1 = document.getElementById("but1");
-but1.addEventListener("click", () => getFirstNumber("1"));
+function getSecondNumber(n){
+    let temp = n;
+    return secondNumber = parseInt(secondNumber + temp)
+}
 
-but2 = document.getElementById("but2");
-but2.addEventListener("click", () => getFirstNumber("2"));
+function getOperator(op){
+    return operator = op
+}
 
-but3 = document.getElementById("but3");
-but3.addEventListener("click", () => getFirstNumber("3"));
+function getOperation(n){
+    if (operator == ""){
+        getFirstNumber(n);
+    }else{
+        getSecondNumber(n)
+    }
+}
 
-but4 = document.getElementById("but4");
-but4.addEventListener("click", () => getFirstNumber("4"));
+const but1 = document.getElementById("but1");
+but1.addEventListener("click", () => getOperation("1"));
 
-but5 = document.getElementById("but5");
-but5.addEventListener("click", () => getFirstNumber("5"));
+const but2 = document.getElementById("but2");
+but2.addEventListener("click", () => getOperation("2"));
 
-but6 = document.getElementById("but6");
-but6.addEventListener("click", () => getFirstNumber("6"));
+const but3 = document.getElementById("but3");
+but3.addEventListener("click", () => getOperation("3"));
 
-but7 = document.getElementById("but7");
-but7.addEventListener("click", () => getFirstNumber("7"));
+const but4 = document.getElementById("but4");
+but4.addEventListener("click", () => getOperation("4"));
 
-but8 = document.getElementById("but8");
-but8.addEventListener("click", () => getFirstNumber("8"));
+const but5 = document.getElementById("but5");
+but5.addEventListener("click", () => getOperation("5"));
 
-but9 = document.getElementById("but6");
-but9.addEventListener("click", () => getFirstNumber("9"));
+const but6 = document.getElementById("but6");
+but6.addEventListener("click", () => getOperation("6"));
 
-but0 = document.getElementById("but0");
-but0.addEventListener("click", () => getFirstNumber("0"));
+const but7 = document.getElementById("but7");
+but7.addEventListener("click", () => getOperation("7"));
+
+const but8 = document.getElementById("but8");
+but8.addEventListener("click", () => getOperation("8"));
+
+const but9 = document.getElementById("but6");
+but9.addEventListener("click", () => getOperation("9"));
+
+const but0 = document.getElementById("but0");
+but0.addEventListener("click", () => getOperation("0"));
+
+const operator1 = document.getElementById("operator1");
+operator1.addEventListener("click", () => getOperator("+"))
+
+const operator2 = document.getElementById("operator2");
+operator2.addEventListener("click", () => getOperator("-"))
+
+const operator3 = document.getElementById("operator3");
+operator3.addEventListener("click", () => getOperator("*"))
+
+const operator4 = document.getElementById("operator4");
+operator4.addEventListener("click", () => getOperator("/"))
+

@@ -21,16 +21,16 @@ let operator =""
 
 function operate(x,y,op){
     if (op === "+"){
-        return sum(x,y);
+        pantalla.textContent = sum(x,y);
     }else if(op === "-"){
-        return rest(x,y);
+        pantalla.textContent = rest(x,y);
     }else if (op === "*"){
-        return power(x,y);
+        pantalla.textContent = power(x,y);
     } else if(op === '/') {
         if(y == 0) {
-            return 'No se puede dividir entre 0';
+            pantalla.textContent = 'No se puede dividir entre 0';
         } else {
-        return x / y;
+            pantalla.textContent = x / y;
         }
         
     }
@@ -53,8 +53,10 @@ function getOperator(op){
 function getOperation(n){
     if (operator == ""){
         getFirstNumber(n);
+        pantalla.textContent = firstNumber;
     }else{
         getSecondNumber(n)
+        pantalla.textContent = secondNumber;
     }
 }
 
@@ -102,3 +104,6 @@ operator4.addEventListener("click", () => getOperator("/"))
 
 const operator5 = document.getElementById("operator5");
 operator5.addEventListener("click", () => operate(firstNumber,secondNumber,operator))
+
+const pantalla = document.getElementById("pantalla")
+
